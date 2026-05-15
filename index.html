@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CulturalMusings — Aesthetics of Society</title>
+<meta name="description" content="CulturalMusings — Aesthetics of Society. Vedic research, Sanskrit phoneme science, sacred texts, Indian classical music. Explore Lalitā, Rudram, Swaras, Sanskrit portals.">
+<link rel="canonical" href="https://www.culturalmusings.com/">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;500&family=Noto+Serif+Devanagari:wght@300;400&display=swap" rel="stylesheet">
+
+<!-- Schema.org for main site -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "CulturalMusings — Aesthetics of Society",
+  "url": "https://www.culturalmusings.com",
+  "description": "Vedic research portal covering Lalitā Sahasranāma, Sri Rudram, Sapta Swaras, and Sanskrit phoneme science.",
+  "hasPart": [
+    { "@type": "WebSite", "name": "Sacred Research Portal", "url": "https://sacredresearch.culturalmusings.com/" },
+    { "@type": "WebSite", "name": "Sanskrit Dimension — Phase 2", "url": "https://sacredphoneme.culturalmusings.com/" }
+  ]
+}
+</script>
+
+<style>
+/* ══════════════════════════════════ TOKENS */
+:root {
+  --ink:     #0e0a0c;
+  --parchment: #f5ede0;
+  --cream:   #faf6ef;
+  --gold:    #9a6a28;
+  --gold2:   #c8954a;
+  --gold3:   #e8c87a;
+  --rose:    #8a3858;
+  --rose2:   #b85878;
+  --rose3:   #e0a0b8;
+  --teal:    #2a6868;
+  --teal2:   #4a9898;
+  --teal3:   #8acaca;
+  --text:    #2a1e18;
+  --text2:   #5a4438;
+  --text3:   #9a8070;
+  --border:  rgba(154,106,40,0.2);
+  --border2: rgba(154,106,40,0.4);
+  --shadow:  0 8px 48px rgba(14,10,12,0.12);
+  --shadow2: 0 2px 16px rgba(14,10,12,0.08);
+}
+.dark-mode {
+  --ink: #f5ede0; --parchment: #0e0a0c; --cream: #130e10;
+  --text: #e8ddd5; --text2: #a89888; --text3: #6a5a52;
+  --border: rgba(200,149,74,0.2); --border2: rgba(200,149,74,0.35);
+  --shadow: 0 8px 48px rgba(0,0,0,0.5); --shadow2: 0 2px 16px rgba(0,0,0,0.3);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--text);
+  font-family: 'Cormorant Garamond', 'Palatino Linotype', serif;
+  font-size: 17px;
+  line-height: 1.8;
+  transition: background 0.35s, color 0.35s;
+  overflow-x: hidden;
+}
+
+.dark-mode body, body.dark-mode { background: var(--parchment); color: var(--text); }
+
+/* ══════════════════════════════════ HEADER */
+header {
+  position: relative;
+  background: var(--ink);
+  color: var(--parchment);
+  overflow: hidden;
+  padding: 0;
+}
+.dark-mode header { background: #080408; }
+
+.header-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 15% 50%, rgba(154,106,40,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 30%, rgba(138,56,88,0.15) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 100%, rgba(42,104,104,0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Yantra-like decorative lines */
+.header-bg::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(200,149,74,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,149,74,0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.header-inner {
+  position: relative; z-index: 1;
+  max-width: 1200px; margin: 0 auto;
+  padding: 3rem 2rem 2.5rem;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+
+.site-om {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 2.2rem; color: var(--gold2); margin-bottom: 0.4rem;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 30px rgba(200,149,74,0.4);
+  animation: glow 3s ease-in-out infinite alternate;
+}
+@keyframes glow {
+  from { text-shadow: 0 0 20px rgba(200,149,74,0.3); }
+  to   { text-shadow: 0 0 40px rgba(200,149,74,0.6), 0 0 60px rgba(200,149,74,0.2); }
+}
+
+.site-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 400; letter-spacing: 0.12em;
+  color: var(--parchment);
+  line-height: 1.1; margin-bottom: 0.3rem;
+}
+.dark-mode .site-title { color: #f5ede0; }
+
+.site-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(0.9rem, 2vw, 1.15rem);
+  font-style: italic; letter-spacing: 0.25em;
+  color: rgba(245,237,224,0.55); text-transform: uppercase;
+  margin-bottom: 1.6rem;
+}
+
+.divider-ornament {
+  width: 200px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold2), transparent);
+  margin: 0 auto 1.6rem;
+  position: relative;
+}
+.divider-ornament::before {
+  content: '✦';
+  position: absolute; top: -8px; left: 50%; transform: translateX(-50%);
+  color: var(--gold2); font-size: 0.7rem;
+}
+
+/* ══════════════════════════════════ NAV */
+nav {
+  background: rgba(14,10,12,0.95);
+  border-bottom: 1px solid rgba(200,149,74,0.25);
+  backdrop-filter: blur(12px);
+  position: sticky; top: 0; z-index: 100;
+}
+.dark-mode nav { background: rgba(8,4,8,0.97); }
+
+.nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex; align-items: center;
+}
+
+.nav-links { display: flex; flex-wrap: wrap; }
+.nav-links a {
+  display: block; padding: 1rem 1.1rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(245,237,224,0.6); text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.nav-links a:hover { color: var(--gold3); }
+.nav-links a.active { color: var(--gold2); border-bottom-color: var(--gold2); }
+
+.nav-right { margin-left: auto; display: flex; align-items: center; gap: 0.5rem; }
+.dark-toggle {
+  background: none; border: 1px solid rgba(200,149,74,0.3);
+  border-radius: 20px; padding: 0.3rem 0.7rem;
+  color: rgba(245,237,224,0.5); cursor: pointer; font-size: 0.75rem;
+  transition: all 0.2s;
+}
+.dark-toggle:hover { border-color: var(--gold2); color: var(--gold3); }
+
+/* ══════════════════════════════════ PAGE */
+.page { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+/* ══════════════════════════════════ SECTION TABS */
+.tab-bar {
+  display: flex; gap: 0; border-bottom: 1px solid var(--border);
+  margin-bottom: 3rem; overflow-x: auto;
+  scrollbar-width: none;
+}
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-btn {
+  padding: 1rem 1.5rem; background: none; border: none; border-bottom: 2px solid transparent;
+  font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text3); cursor: pointer; white-space: nowrap;
+  transition: all 0.2s; margin-bottom: -1px;
+}
+.tab-btn:hover { color: var(--gold); }
+.tab-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
+.tab-section { display: none; animation: fadeUp 0.3s ease; }
+.tab-section.active { display: block; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+/* ══════════════════════════════════ SACRED HUB */
+.sacred-intro {
+  display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: start;
+  margin-bottom: 3.5rem; padding: 3rem 0; border-bottom: 1px solid var(--border);
+}
+@media(max-width:720px){ .sacred-intro { grid-template-columns: 1fr; gap: 1.5rem; } }
+
+.sacred-intro-left {
+  position: sticky; top: 80px;
+  text-align: center;
+}
+.yantra-symbol {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 5rem; color: var(--gold2); display: block;
+  line-height: 1; margin-bottom: 0.5rem;
+  filter: drop-shadow(0 0 20px rgba(200,149,74,0.3));
+}
+.sacred-intro-left h2 {
+  font-family: 'Cinzel', serif; font-size: 1rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 0.3rem;
+}
+.sacred-intro-left p { font-size: 0.9rem; font-style: italic; color: var(--text3); }
+
+.sacred-intro-right h3 {
+  font-family: 'Cinzel', serif; font-weight: 400;
+  font-size: 1.6rem; color: var(--text); margin-bottom: 1rem; letter-spacing: 0.05em;
+}
+.sacred-intro-right p { color: var(--text2); margin-bottom: 1rem; font-size: 1rem; }
+
+/* Portal cards */
+.portals-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem; margin-bottom: 3rem;
+}
+.portal-card {
+  background: var(--parchment);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0; overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+  box-shadow: var(--shadow2);
+  text-decoration: none; color: inherit; display: flex; flex-direction: column;
+}
+.dark-mode .portal-card { background: #1a1215; }
+.portal-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+
+.portal-card-header {
+  padding: 1.8rem 1.8rem 1.2rem;
+  background: linear-gradient(135deg, rgba(154,106,40,0.08), transparent);
+  border-bottom: 1px solid var(--border);
+}
+.portal-icon {
+  font-size: 2rem; display: block; margin-bottom: 0.5rem; line-height: 1;
+}
+.portal-card-header h3 {
+  font-family: 'Cinzel', serif; font-weight: 400;
+  font-size: 1rem; letter-spacing: 0.1em; color: var(--gold);
+  margin-bottom: 0.2rem;
+}
+.portal-subdomain {
+  font-size: 0.72rem; font-family: 'Courier New', monospace;
+  color: var(--teal2); letter-spacing: 0.03em;
+}
+.dark-mode .portal-subdomain { color: var(--teal3); }
+
+.portal-card-body { padding: 1.2rem 1.8rem; flex: 1; }
+.portal-card-body p { font-size: 0.9rem; color: var(--text2); margin-bottom: 0.8rem; line-height: 1.7; }
+
+.portal-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.tag {
+  font-size: 0.68rem; padding: 0.15rem 0.55rem; border-radius: 2px;
+  background: rgba(154,106,40,0.1); border: 1px solid var(--border);
+  color: var(--text3); letter-spacing: 0.05em; font-family: 'Cinzel', serif;
+}
+
+.portal-card-footer {
+  padding: 1rem 1.8rem;
+  border-top: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.portal-status {
+  font-size: 0.7rem; color: var(--text3); display: flex; align-items: center; gap: 0.4rem;
+}
+.status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal2); }
+.portal-link-arrow {
+  font-size: 0.8rem; color: var(--gold2);
+  font-family: 'Cinzel', serif; letter-spacing: 0.05em;
+}
+
+/* Phase badges */
+.phase-badge {
+  display: inline-block; font-size: 0.62rem;
+  font-family: 'Cinzel', serif; letter-spacing: 0.1em;
+  padding: 0.15rem 0.6rem; border-radius: 2px;
+  border: 1px solid; margin-left: 0.4rem; vertical-align: middle;
+}
+.phase-1 { color: var(--rose2);  border-color: rgba(138,56,88,0.4);  background: rgba(138,56,88,0.08); }
+.phase-2 { color: var(--teal2);  border-color: rgba(42,104,104,0.4);  background: rgba(42,104,104,0.08); }
+.phase-34{ color: var(--gold);   border-color: rgba(154,106,40,0.4);  background: rgba(154,106,40,0.08); }
+
+/* Architecture diagram */
+.arch-diagram {
+  background: var(--parchment); border: 1px solid var(--border);
+  border-radius: 4px; padding: 2rem; margin-bottom: 2rem;
+}
+.dark-mode .arch-diagram { background: #130e10; }
+.arch-diagram h3 {
+  font-family: 'Cinzel', serif; font-weight: 400; font-size: 0.85rem;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--text3);
+  margin-bottom: 1.5rem; text-align: center;
+}
+.arch-tree { font-family: 'Courier New', monospace; font-size: 0.82rem; color: var(--text2); line-height: 2; }
+.arch-tree .root  { color: var(--gold); font-weight: bold; font-size: 0.9rem; }
+.arch-tree .sub   { color: var(--rose2); }
+.arch-tree .leaf  { color: var(--teal2); }
+.arch-tree .phase { color: var(--text3); font-size: 0.72rem; }
+
+/* SEO answer section */
+.seo-guide {
+  background: linear-gradient(135deg, rgba(154,106,40,0.05), rgba(42,104,104,0.04));
+  border: 1px solid var(--border); border-left: 3px solid var(--gold);
+  border-radius: 0 4px 4px 0; padding: 2rem; margin-bottom: 2rem;
+}
+.seo-guide h3 {
+  font-family: 'Cinzel', serif; font-weight: 400;
+  font-size: 1.1rem; letter-spacing: 0.08em; color: var(--gold);
+  margin-bottom: 1rem;
+}
+.seo-step {
+  display: flex; gap: 1rem; padding: 0.8rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.seo-step:last-child { border-bottom: none; }
+.step-icon { font-size: 1.1rem; min-width: 28px; }
+.step-body h4 { font-size: 0.95rem; color: var(--text); margin-bottom: 0.2rem; }
+.step-body p  { font-size: 0.88rem; color: var(--text2); }
+.step-body code {
+  background: rgba(154,106,40,0.1); border: 1px solid var(--border);
+  border-radius: 3px; padding: 0.05rem 0.4rem; font-size: 0.78rem;
+  color: var(--teal2); font-family: 'Courier New', monospace;
+}
+.yes-badge {
+  display: inline-block; padding: 0.1rem 0.5rem; border-radius: 2px;
+  background: rgba(42,104,104,0.1); border: 1px solid rgba(42,104,104,0.35);
+  color: var(--teal2); font-size: 0.72rem; font-family: 'Cinzel', serif; letter-spacing: 0.05em;
+}
+.no-badge {
+  display: inline-block; padding: 0.1rem 0.5rem; border-radius: 2px;
+  background: rgba(138,56,88,0.1); border: 1px solid rgba(138,56,88,0.3);
+  color: var(--rose2); font-size: 0.72rem; font-family: 'Cinzel', serif;
+}
+
+/* Vercel note */
+.vercel-note {
+  background: rgba(0,0,0,0.03); border: 1px solid var(--border);
+  border-radius: 4px; padding: 1.5rem;
+}
+.dark-mode .vercel-note { background: rgba(255,255,255,0.02); }
+.vercel-note h4 { font-family: 'Cinzel', serif; font-size: 0.9rem; letter-spacing: 0.1em; color: var(--text); margin-bottom: 0.8rem; }
+
+/* Other tabs placeholder */
+.coming-soon {
+  text-align: center; padding: 5rem 2rem;
+  font-style: italic; color: var(--text3);
+  font-size: 1.2rem;
+}
+.coming-soon span {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 3rem; display: block; margin-bottom: 1rem; color: var(--gold2);
+  opacity: 0.4;
+}
+
+/* ══════════════════════════════════ FOOTER */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  font-size: 0.82rem; color: var(--text3);
+  font-style: italic;
+}
+footer strong { color: var(--gold); font-style: normal; font-family: 'Cinzel', serif; letter-spacing: 0.05em; font-size: 0.78rem; }
+footer a { color: var(--teal2); text-decoration: none; }
+footer a:hover { color: var(--gold); }
+
+/* ══════════════════════════════════ SCROLLBAR */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+
+/* ══════════════════════════════════ RESPONSIVE */
+@media(max-width:600px){
+  .nav-links a { padding: 0.8rem 0.7rem; font-size: 0.65rem; }
+  .tab-btn { padding: 0.8rem 1rem; font-size: 0.65rem; }
+  .portals-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════ HEADER ═══════ -->
+<header>
+  <div class="header-bg"></div>
+  <div class="header-inner">
+    <span class="site-om">ॐ</span>
+    <h1 class="site-title">CulturalMusings</h1>
+    <p class="site-sub">Aesthetics of Society</p>
+    <div class="divider-ornament"></div>
+    <p style="font-size:1rem;color:rgba(245,237,224,0.5);max-width:560px;font-style:italic;">
+      A deep research platform exploring the intersection of sacred tradition, phoneme science, classical music, and living culture.
+    </p>
+  </div>
+</header>
+
+<!-- ═══════ NAV ═══════ -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="#" class="active" data-tab="home" onclick="showTab('home',this);return false;">Home</a>
+      <a href="#" data-tab="sacred" onclick="showTab('sacred',this);return false;">🌺 Sacred Research</a>
+      <a href="#" data-tab="blog" onclick="showTab('blog',this);return false;">Blog</a>
+      <a href="#" data-tab="about" onclick="showTab('about',this);return false;">About</a>
+    </div>
+    <div class="nav-right">
+      <button class="dark-toggle" onclick="toggleDark()" id="dark-btn">☾ Dark</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════ MAIN ═══════ -->
+<div class="page" style="padding-top:3rem;">
+
+  <!-- HOME TAB -->
+  <div id="tab-home" class="tab-section active">
+    <div style="text-align:center;padding:2rem 0 3rem;border-bottom:1px solid var(--border);margin-bottom:3rem;">
+      <h2 style="font-family:'Cinzel',serif;font-weight:400;font-size:1.8rem;letter-spacing:0.1em;color:var(--gold);margin-bottom:0.8rem;">Aesthetics of Society</h2>
+      <p style="max-width:640px;margin:0 auto 1.5rem;font-size:1.05rem;color:var(--text2);font-style:italic;">
+        Where Vedic phoneme science meets neurology, where mantra meets music, where the sacred texts of India are opened to multi-dimensional scholarly research.
+      </p>
+      <button onclick="showTab('sacred', document.querySelector('[data-tab=sacred]'))" style="font-family:'Cinzel',serif;font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.8rem 2rem;background:var(--gold);border:none;color:white;border-radius:2px;cursor:pointer;">Enter Sacred Research Portal →</button>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.5rem;">
+      <div style="padding:1.5rem;border:1px solid var(--border);border-radius:4px;cursor:pointer;" onclick="showTab('sacred',document.querySelector('[data-tab=sacred]'))">
+        <div style="font-size:1.8rem;margin-bottom:0.5rem;">🌺</div>
+        <h3 style="font-family:'Cinzel',serif;font-weight:400;font-size:0.9rem;letter-spacing:0.1em;color:var(--gold);margin-bottom:0.4rem;">Sacred Research</h3>
+        <p style="font-size:0.88rem;color:var(--text2);">Lalitā · Rudram · Swaras · Sanskrit — AI-powered multi-dimensional Vedic study.</p>
+      </div>
+      <div style="padding:1.5rem;border:1px solid var(--border);border-radius:4px;opacity:0.6;">
+        <div style="font-size:1.8rem;margin-bottom:0.5rem;">✍️</div>
+        <h3 style="font-family:'Cinzel',serif;font-weight:400;font-size:0.9rem;letter-spacing:0.1em;color:var(--gold);margin-bottom:0.4rem;">Blog</h3>
+        <p style="font-size:0.88rem;color:var(--text2);">Essays on aesthetics, culture, and the living tradition. Coming soon.</p>
+      </div>
+      <div style="padding:1.5rem;border:1px solid var(--border);border-radius:4px;opacity:0.6;">
+        <div style="font-size:1.8rem;margin-bottom:0.5rem;">🌍</div>
+        <h3 style="font-family:'Cinzel',serif;font-weight:400;font-size:0.9rem;letter-spacing:0.1em;color:var(--gold);margin-bottom:0.4rem;">More Portals</h3>
+        <p style="font-size:0.88rem;color:var(--text2);">50+ specialised portals across culturalmusings.com subdomains. Explore below.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- SACRED RESEARCH TAB — main deliverable                    -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <div id="tab-sacred" class="tab-section">
+
+    <!-- Intro -->
+    <div class="sacred-intro">
+      <div class="sacred-intro-left">
+        <span class="yantra-symbol">ॐ</span>
+        <h2>Sacred Research</h2>
+        <p>A multi-portal Vedic science platform</p>
+      </div>
+      <div class="sacred-intro-right">
+        <h3>The Sacred Research Network</h3>
+        <p>Two live portals — with Phases 3 and 4 now integrated — form the core of this research network. Each subdomain is a self-contained deep-research tool that also cross-links to every other portal's content.</p>
+        <p>Together they cover 1000 + 300 divine names, 25 Rudram sections, 7 Swaras × 3 octaves, 50 Sanskrit aksharas, 200 Dhātu verbal roots, and a live Pāṇinian inference engine — all accessible free via Web Search or AI-powered with your own Groq / Gemini / OpenRouter key.</p>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.8rem;">
+          <span class="phase-badge phase-1">Phase 1 — Live</span>
+          <span class="phase-badge phase-2">Phase 2 — Live</span>
+          <span class="phase-badge phase-34">Phase 3+4 — Integrated</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Portal Cards -->
+    <h2 style="font-family:'Cinzel',serif;font-weight:400;font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text3);margin-bottom:1.2rem;">Live Portals — Click to Open</h2>
+
+    <div class="portals-grid">
+
+      <!-- CARD 1: Phase 1 -->
+      <a class="portal-card" href="https://sacredresearch.culturalmusings.com/" target="_blank" rel="noopener">
+        <div class="portal-card-header">
+          <span class="portal-icon">🌺</span>
+          <h3>Sacred Research Portal <span class="phase-badge phase-1">Phase 1</span></h3>
+          <div class="portal-subdomain">sacredresearch.culturalmusings.com</div>
+        </div>
+        <div class="portal-card-body">
+          <p>The master portal. Four deep-research sections in one unified interface with shared navigation, AI key vault, and web-search fallback.</p>
+          <div class="portal-tags">
+            <span class="tag">Lalitā Sahasranāma</span>
+            <span class="tag">1000 Names</span>
+            <span class="tag">Lalitā Triśatī</span>
+            <span class="tag">Sri Rudram</span>
+            <span class="tag">Sapta Swaras</span>
+            <span class="tag">Sanskrit Dimension</span>
+            <span class="tag">9 Scholarly Dimensions</span>
+            <span class="tag">AI + Web Search</span>
+          </div>
+        </div>
+        <div class="portal-card-footer">
+          <span class="portal-status"><span class="status-dot"></span> Live</span>
+          <span class="portal-link-arrow">Open Portal →</span>
+        </div>
+      </a>
+
+      <!-- CARD 2: Phase 2 -->
+      <a class="portal-card" href="https://sacredphoneme.culturalmusings.com/" target="_blank" rel="noopener">
+        <div class="portal-card-header">
+          <span class="portal-icon">ॐ</span>
+          <h3>Sanskrit Dimension <span class="phase-badge phase-2">Phase 2</span></h3>
+          <div class="portal-subdomain">sacredphoneme.culturalmusings.com</div>
+        </div>
+        <div class="portal-card-body">
+          <p>Three specialised Sanskrit tools: the complete 50-Akshara phoneme map, 200-root Dhātu explorer cross-linked across all portals, and the live Pāṇinian inference engine.</p>
+          <div class="portal-tags">
+            <span class="tag">50 Aksharas</span>
+            <span class="tag">Chakra · Deity · Swara</span>
+            <span class="tag">200 Dhātu Roots</span>
+            <span class="tag">Pāṇinian Grammar</span>
+            <span class="tag">Live Inference</span>
+            <span class="tag">Cross-Portal Links</span>
+          </div>
+        </div>
+        <div class="portal-card-footer">
+          <span class="portal-status"><span class="status-dot"></span> Live</span>
+          <span class="portal-link-arrow">Open Portal →</span>
+        </div>
+      </a>
+
+      <!-- CARD 3: Phase 3+4 (the file we just built) -->
+      <a class="portal-card" href="https://sacredresearch.culturalmusings.com/#vault" target="_blank" rel="noopener" style="border-color:rgba(154,106,40,0.4);">
+        <div class="portal-card-header" style="background:linear-gradient(135deg,rgba(154,106,40,0.12),transparent);">
+          <span class="portal-icon">⚷</span>
+          <h3>Smart Vault + SEO Engine <span class="phase-badge phase-34">Phase 3+4</span></h3>
+          <div class="portal-subdomain">integrated into both portals</div>
+        </div>
+        <div class="portal-card-body">
+          <p>20-slot rotating API vault (Groq → Gemini → OpenRouter → Web Search fallback) with token budget tracking, plus full SEO pre-rendering, schema.org markup, and sitemap generation.</p>
+          <div class="portal-tags">
+            <span class="tag">20 Key Slots</span>
+            <span class="tag">Auto-rotation</span>
+            <span class="tag">Rate-limit Skip</span>
+            <span class="tag">Token Threshold</span>
+            <span class="tag">Schema.org</span>
+            <span class="tag">FAQ Rich Snippets</span>
+            <span class="tag">Sitemap.xml</span>
+          </div>
+        </div>
+        <div class="portal-card-footer">
+          <span class="portal-status"><span class="status-dot" style="background:var(--gold2)"></span> Integrated</span>
+          <span class="portal-link-arrow">View Vault →</span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Architecture tree -->
+    <div class="arch-diagram">
+      <h3>Portal Architecture — culturalmusings.com Network</h3>
+      <div class="arch-tree">
+        <div class="root">www.culturalmusings.com</div>
+        <div>├── <span class="sub">sacredresearch.culturalmusings.com</span> <span class="phase">← Phase 1</span></div>
+        <div>│   ├── <span class="leaf">/lalita</span>  &nbsp;&nbsp;Lalitā Sahasranāma × 1000 names × 9 dimensions</div>
+        <div>│   ├── <span class="leaf">/lalita-trisati</span>  Lalitā Triśatī × 300 names</div>
+        <div>│   ├── <span class="leaf">/rudram</span>  &nbsp;&nbsp;Sri Rudram × 25 sections (Namakam + Chamakam)</div>
+        <div>│   ├── <span class="leaf">/swaras</span>  &nbsp;&nbsp;Sapta Swaras × 7 tones × 3 octaves × 6 pages</div>
+        <div>│   └── <span class="leaf">/sanskrit</span>  Sanskrit Dimension (links to Phase 2)</div>
+        <div>│</div>
+        <div>├── <span class="sub">sacredphoneme.culturalmusings.com</span> <span class="phase">← Phase 2</span></div>
+        <div>│   ├── <span class="leaf">/aksharas</span>  50 phonemes × chakra × deity × swara × nāda</div>
+        <div>│   ├── <span class="leaf">/dhatu</span>  &nbsp;&nbsp;200 verbal roots × Gaṇa × cross-portal links</div>
+        <div>│   └── <span class="leaf">/inference</span>  Live Pāṇinian engine — any Sanskrit word</div>
+        <div>│</div>
+        <div>└── <span class="phase">Shared layer (Phases 3+4): ⚷ Smart Vault · 🔍 SEO · Sitemap · Schema.org</span></div>
+      </div>
+    </div>
+
+    <!-- SEO ANSWER SECTION -->
+    <div class="seo-guide">
+      <h3>Do You Need to Register for SEO? — Your Situation with Vercel + 50 Sites</h3>
+
+      <div class="seo-step">
+        <div class="step-icon">✅</div>
+        <div class="step-body">
+          <h4>Google Search Console — <span class="yes-badge">Do This First</span></h4>
+          <p>Yes, one registration per domain/subdomain you want indexed. Go to <code>search.google.com/search-console</code> → Add Property → choose <code>URL prefix</code> or <code>Domain</code>. Since you have 50+ Vercel sites, use <strong>Domain property</strong> — it covers all subdomains and protocols in one shot. Verify by adding a TXT record to your DNS (Vercel makes this straightforward). Submit your <code>sitemap.xml</code> for each. Free, permanent, essential.</p>
+        </div>
+      </div>
+
+      <div class="seo-step">
+        <div class="step-icon">✅</div>
+        <div class="step-body">
+          <h4>Vercel Analytics — <span class="yes-badge">Already There</span></h4>
+          <p>Vercel's built-in Web Analytics is free up to a limit — enable it per project in the Vercel dashboard → Analytics tab. No code change needed. It gives Core Web Vitals (LCP, CLS, FID) which are Google ranking signals. Good CWV scores = ranking boost, no extra registration needed.</p>
+        </div>
+      </div>
+
+      <div class="seo-step">
+        <div class="step-icon">✅</div>
+        <div class="step-body">
+          <h4>Bing Webmaster Tools — <span class="yes-badge">5 Minutes, Worth It</span></h4>
+          <p>Go to <code>bing.com/webmasters</code>. Import your sites directly from Google Search Console — one click imports all 50+ sites at once. Bing + DuckDuckGo + Yahoo all use Bing's index, so this covers 3 search engines for free.</p>
+        </div>
+      </div>
+
+      <div class="seo-step">
+        <div class="step-icon">⚡</div>
+        <div class="step-body">
+          <h4>Vercel + culturalmusings.com Subdomains — <span class="yes-badge">Key Point</span></h4>
+          <p>Since all your subdomains (<code>sacredresearch</code>, <code>sacredphoneme</code>, etc.) live under <code>culturalmusings.com</code>, registering the <strong>Domain property</strong> in GSC covers them all. You do NOT need separate GSC properties for each subdomain unless you want separate analytics per subdomain (useful for the Sacred portals specifically). One domain property = all subdomains tracked together.</p>
+        </div>
+      </div>
+
+      <div class="seo-step">
+        <div class="step-icon">❌</div>
+        <div class="step-body">
+          <h4>Paid SEO Tools — <span class="no-badge">Not Required</span></h4>
+          <p>Ahrefs, SEMrush, Moz etc. are for competitive analysis and backlink tracking. For your niche (Sanskrit research, Vedic studies) the competition is low and your content is unique. GSC + Bing Webmaster + the Phase 4 schema.org we built is sufficient to get full Google indexing for free.</p>
+        </div>
+      </div>
+
+      <div class="seo-step">
+        <div class="step-icon">📋</div>
+        <div class="step-body">
+          <h4>For Each Sacred Portal — Exact Steps</h4>
+          <p>
+            1. Add <code>sacredresearch.culturalmusings.com</code> as URL prefix in GSC → verify → submit <code>/sitemap.xml</code>.<br>
+            2. Same for <code>sacredphoneme.culturalmusings.com</code>.<br>
+            3. Test JSON-LD at <code>search.google.com/test/rich-results</code> — confirm FAQPage and Dataset types show.<br>
+            4. Use GSC → URL Inspection → Request Indexing for the homepage of each portal.<br>
+            5. Done. Google will crawl all 1000+ static name cards within days.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vercel-specific note -->
+    <div class="vercel-note">
+      <h4>⚡ Vercel-Specific: You're Already Ahead</h4>
+      <p style="font-size:0.9rem;color:var(--text2);margin-bottom:0.8rem;">Since you've deployed 50+ sites on Vercel, you have structural SEO advantages built in:</p>
+      <ul style="list-style:none;font-size:0.88rem;color:var(--text2);line-height:2.2;">
+        <li>✓ <strong>HTTPS by default</strong> — Google's security ranking signal, automatic on all Vercel deployments</li>
+        <li>✓ <strong>Global CDN edge network</strong> — fast TTFB worldwide, positive Core Web Vitals</li>
+        <li>✓ <strong>Automatic compression</strong> — Brotli/gzip, faster page loads = better rankings</li>
+        <li>✓ <strong>Clean URLs</strong> — Vercel handles trailing slash redirects cleanly (no duplicate content)</li>
+        <li>✓ <strong>Custom domain CNAME</strong> — <code>sacredresearch.culturalmusings.com</code> inherits domain authority from root domain</li>
+        <li style="color:var(--gold);">→ The only thing left: GSC registration + sitemap submission. Everything else is already optimised.</li>
+      </ul>
+    </div>
+
+  </div>
+  <!-- /tab-sacred -->
+
+  <!-- BLOG TAB -->
+  <div id="tab-blog" class="tab-section">
+    <div class="coming-soon"><span>ॐ</span>Blog — Coming Soon<br><small style="font-size:0.75rem;opacity:0.5;display:block;margin-top:0.5rem;">Essays on aesthetics, culture, and living tradition</small></div>
+  </div>
+
+  <!-- ABOUT TAB -->
+  <div id="tab-about" class="tab-section">
+    <div class="coming-soon"><span>✦</span>About CulturalMusings<br><small style="font-size:0.75rem;opacity:0.5;display:block;margin-top:0.5rem;">Aesthetics of Society — the project and the vision</small></div>
+  </div>
+
+</div><!-- /page -->
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+  <div style="max-width:1200px;margin:0 auto;">
+    <p style="margin-bottom:0.6rem;">
+      <strong>CulturalMusings</strong> — Aesthetics of Society
+    </p>
+    <p style="margin-bottom:0.4rem;">
+      <a href="https://sacredresearch.culturalmusings.com/">Sacred Research Portal</a> ·
+      <a href="https://sacredphoneme.culturalmusings.com/">Sanskrit Dimension</a> ·
+      <a href="https://www.culturalmusings.com/">culturalmusings.com</a>
+    </p>
+    <p style="font-family:'Noto Serif Devanagari',serif;font-size:1rem;color:var(--gold2);margin-top:0.6rem;opacity:0.7;">
+      सत्यम् शिवम् सुन्दरम्
+    </p>
+  </div>
+</footer>
+
+<script>
+/* ── Tabs ── */
+function showTab(name, clickedLink) {
+  document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  if (clickedLink) clickedLink.classList.add('active');
+  window.scrollTo({top: document.querySelector('nav').offsetTop - 1, behavior:'smooth'});
+}
+
+/* ── Dark mode ── */
+function toggleDark() {
+  document.documentElement.classList.toggle('dark-mode');
+  const btn = document.getElementById('dark-btn');
+  const isDark = document.documentElement.classList.contains('dark-mode');
+  btn.textContent = isDark ? '☀ Light' : '☾ Dark';
+  try { localStorage.setItem('cm_dark', isDark ? '1' : '0'); } catch(e){}
+}
+// Restore preference
+try {
+  if (localStorage.getItem('cm_dark') === '1') {
+    document.documentElement.classList.add('dark-mode');
+    document.getElementById('dark-btn').textContent = '☀ Light';
+  }
+} catch(e){}
+
+// Auto-open Sacred tab if URL hash says so
+if (window.location.hash === '#sacred' || window.location.hash === '#vault') {
+  showTab('sacred', document.querySelector('[data-tab=sacred]'));
+}
+</script>
+</body>
+</html>
